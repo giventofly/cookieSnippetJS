@@ -1,8 +1,10 @@
+document.addEventListener("DOMContentLoaded", function (event) {
+
 const setPrivacy = function () {
   localStorage.setItem("privacy", "read and agreed");
 }
 
-const getPrivacy = function () {
+(()=>{
   const value = localStorage.getItem("privacy");
   //if not exists cookie
   if (value === null) {
@@ -10,4 +12,6 @@ const getPrivacy = function () {
     //set cookie.
     setPrivacy();
   }
-}
+})();
+
+});
